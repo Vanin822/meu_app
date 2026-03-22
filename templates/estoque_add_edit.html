@@ -1,0 +1,25 @@
+<!-- templates/estoque_add_edit.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ 'Editar' if item else 'Adicionar' }} Estoque</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
+</head>
+<body>
+    <h1>{{ 'Editar' if item else 'Adicionar' }} Estoque</h1>
+
+    <form method="POST">
+        <label for="produto">Produto:</label>
+        <input type="text" id="produto" name="produto" value="{{ item[1] if item else '' }}" required><br><br>
+
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" id="quantidade" name="quantidade" value="{{ item[2] if item else '' }}" required><br><br>
+
+        <button type="submit">{{ 'Atualizar' if item else 'Adicionar' }}</button>
+    </form>
+
+    <br>
+    <a href="{{ url_for('estoque') }}">Voltar para Estoque</a>
+</body>
+</html>
