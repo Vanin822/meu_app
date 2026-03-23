@@ -103,7 +103,7 @@ def home():
 
     con.close()
 
-    return render_template("home.html",
+    return "<h1>TESTE APP PY</h1>"
                            total_produtos=total_produtos,
                            valor_estoque=valor_estoque)
 
