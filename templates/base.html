@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistema</title>
+    <link rel="stylesheet" href="/static/css/estilo.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Meu Sistema</h2>
+    <a href="/home">Dashboard</a>
+    <a href="/produtos">Produtos</a>
+    <a href="/colaborador">Vendas</a>
+    <a href="/financeiro">Financeiro</a>
+    <a href="/logout">Sair</a>
+</div>
+
+<div class="content">
+    {% block conteudo %}{% endblock %}
+</div>
+
+</body>
+</html>
