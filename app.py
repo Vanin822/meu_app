@@ -5,7 +5,7 @@ from flask import Flask, render_template, request, redirect, session
 # 🔵 CAMINHO DO PROJETO
 base_dir = os.path.dirname(os.path.abspath(__file__))
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', template_folder='templates')
 app.secret_key = "chave_super_secreta"
 
 
