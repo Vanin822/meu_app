@@ -1,112 +1,70 @@
+/* RESET */
 body {
     margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f1f2f6;
+    font-family: 'Poppins', sans-serif;
+    background: #f4f6f9;
 }
 
-/* MENU */
+/* LAYOUT */
+.layout {
+    display: flex;
+}
+
+/* SIDEBAR */
 .sidebar {
-    width: 230px;
+    width: 220px;
     height: 100vh;
-    background: linear-gradient(180deg, #1e272e, #2f3640);
-    position: fixed;
-    padding-top: 20px;
+    background: #1e272e;
+    color: white;
+    padding: 20px;
 }
 
 .sidebar h2 {
-    color: #00a8ff;
-    text-align: center;
+    margin-bottom: 30px;
 }
 
 .sidebar a {
     display: block;
-    color: #dcdde1;
-    padding: 15px;
+    color: white;
     text-decoration: none;
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 8px;
     transition: 0.3s;
 }
 
 .sidebar a:hover {
-    background: #353b48;
-    padding-left: 25px;
-    color: #00a8ff;
+    background: #485460;
 }
 
 /* CONTEÚDO */
-.content {
-    margin-left: 230px;
-    padding: 20px;
+.conteudo {
+    flex: 1;
+    padding: 30px;
 }
 
 /* CARDS */
 .cards {
     display: flex;
     gap: 20px;
-    flex-wrap: wrap;
 }
 
 .card {
     background: white;
     padding: 20px;
     border-radius: 12px;
-    width: 250px;
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
+    width: 200px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .card h3 {
     margin: 0;
-    color: #2f3640;
+    font-size: 16px;
+    color: #555;
 }
 
 .card p {
-    font-size: 22px;
-    color: #00a8ff;
-}
-
-/* FORM */
-input {
-    padding: 10px;
-    margin: 5px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-}
-
-/* BOTÕES */
-button {
-    padding: 10px;
-    background: #00a8ff;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #0097e6;
-}
-
-/* TABELA */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-th {
-    background: #2f3640;
-    color: white;
-    padding: 12px;
-}
-
-td {
-    padding: 12px;
-    border-bottom: 1px solid #eee;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
 }
