@@ -4,11 +4,21 @@ import sqlite3
 app = Flask(__name__)
 app.secret_key = "123456"  # chave da sessão
 
-def criar_tabela_financeiro():
-    import sqlite3
+def criar_tabelas():
     conn = sqlite3.connect("banco.db")
     cursor = conn.cursor()
 
+    # PRODUTOS
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS produtos (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        nome TEXT,
+        preco REAL,
+        quantidade INTEGER
+    )
+    """)
+
+    # FINANCEIRO
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS financeiro (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -20,6 +30,9 @@ def criar_tabela_financeiro():
 
     conn.commit()
     conn.close()
+
+
+criar_tabelas()
 
 
 criar_tabela_financeiro()
