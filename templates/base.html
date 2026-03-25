@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <title>Sistema</title>
 
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
 </head>
 
@@ -15,18 +12,16 @@
 
 <div class="layout">
 
-    <!-- MENU LATERAL -->
     <aside class="sidebar">
         <h2>Sistema</h2>
 
         <a href="/home">🏠 Dashboard</a>
         <a href="/produtos">📦 Produtos</a>
-        <a href="#">💰 Vendas</a>
-        <a href="#">📊 Financeiro</a>
+        <a href="/vendas">💰 Vendas</a>
+        <a href="/financeiro">📊 Financeiro</a>
         <a href="/logout">🚪 Sair</a>
     </aside>
 
-    <!-- CONTEÚDO -->
     <main class="conteudo">
         {% block conteudo %}{% endblock %}
     </main>
