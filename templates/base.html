@@ -1,32 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Sistema</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
 </head>
-
 <body>
 
-<div class="layout">
+<h1>SISTEMA ONLINE</h1>
 
-    <aside class="sidebar">
-        <h2>Sistema</h2>
+<a href="/home">Dashboard</a> |
+<a href="/logout">Sair</a>
 
-        <a href="/home">🏠 Dashboard</a>
-        <a href="/produtos">📦 Produtos</a>
-        <a href="/vendas">💰 Vendas</a>
-        <a href="/financeiro">📊 Financeiro</a>
-        <a href="/logout">🚪 Sair</a>
-    </aside>
+<hr>
 
-    <main class="conteudo">
-        {% block conteudo %}{% endblock %}
-    </main>
-
-</div>
+{% block conteudo %}{% endblock %}
 
 </body>
 </html>
