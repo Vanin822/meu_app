@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Home</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-<h1>Dashboard funcionando</h1>
+{% block conteudo %}
+
+<h1 style="color:red;">HOME OK</h1>
 
 <p>Total: {{ total_produtos }}</p>
 <p>Estoque: {{ valor_estoque }}</p>
 <p>Saldo: {{ saldo }}</p>
 
-</body>
-</html>
+{% endblock %}
