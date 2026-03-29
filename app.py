@@ -108,7 +108,41 @@ def home():
 def logout():
     session.clear()
     return redirect("/")
+# 🔹 PRODUTOS (COLE AQUI EM CIMA DO LOGOUT)
+@app.route("/produtos", methods=["GET", "POST"])
+def produtos():
+    if "usuario" not in session:
+        return redirect("/")
 
+    conn = conectar()
+    cursor = conn.cursor()
+
+    # SE ENVIAR FORMULÁRIO
+    if request.method == "POST":
+        nome = request.form["nome"]
+        preco = float(request.form["preco"])
+        quantidade = int(request.form["quantidade"])
+
+        cursor.execute(
+            "INSERT INTO produtos (nome, preco, quantidade) VALUES (?, ?, ?)",
+            (nome, preco, quantidade)
+        )
+        conn.commit()
+
+    # LISTAR PRODUTOS
+    cursor.execute("SELECT * FROM produtos")
+    lista = cursor.fetchall()
+
+    conn.close()
+
+    return render_template("produtos.html", produtos=lista)
+
+
+# 🔹 LOGOUT (JÁ EXISTE)
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect("/")
 
 if __name__ == "__main__":
     app.run(debug=True)

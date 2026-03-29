@@ -2,7 +2,7 @@
 
 {% block conteudo %}
 
-<h1>Produtos</h1>
+<h2>Produtos</h2>
 
 <form method="POST">
     <input type="text" name="nome" placeholder="Nome" required>
@@ -13,22 +13,20 @@
 
 <br>
 
-<table>
+<table border="1">
 <tr>
     <th>ID</th>
     <th>Nome</th>
     <th>Preço</th>
     <th>Quantidade</th>
-    <th>Ação</th>
 </tr>
 
 {% for p in produtos %}
 <tr>
     <td>{{ p[0] }}</td>
     <td>{{ p[1] }}</td>
-    <td>R$ {{ "%.2f"|format(p[2]) }}</td>
+    <td>R$ {{ p[2] }}</td>
     <td>{{ p[3] }}</td>
-    <td><a href="/excluir/{{ p[0] }}">Excluir</a></td>
 </tr>
 {% endfor %}
 
