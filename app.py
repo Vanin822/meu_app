@@ -62,24 +62,38 @@ def home():
     if "usuario" not in session:
         return redirect("/")
 
-    conn = conectar()
-    cursor = conn.cursor()
+    try:
+        conn = conectar()
+        cursor = conn.cursor()
 
-    cursor.execute("SELECT COUNT(*) FROM produtos")
-    total_produtos = cursor.fetchone()[0] or 0
+        cursor.execute("SELECT COUNT(*) FROM produtos")
+        total_produtos = cursor.fetchone()[0] or 0
 
-    cursor.execute("SELECT SUM(preco * quantidade) FROM produtos")
-    valor_estoque = cursor.fetchone()[0] or 0
+        cursor.execute("SELECT SUM(preco * quantidade) FROM produtos")
+        valor_estoque = cursor.fetchone()[0] or 0
 
-    cursor.execute("SELECT SUM(valor) FROM financeiro WHERE tipo='entrada'")
-    entrada = cursor.fetchone()[0] or 0
+        cursor.execute("SELECT SUM(valor) FROM financeiro WHERE tipo='entrada'")
+        entrada = cursor.fetchone()[0] or 0
 
-    cursor.execute("SELECT SUM(valor) FROM financeiro WHERE tipo='saida'")
-    saida = cursor.fetchone()[0] or 0
+        cursor.execute("SELECT SUM(valor) FROM financeiro WHERE tipo='saida'")
+        saida = cursor.fetchone()[0] or 0
 
-    saldo = entrada - saida
+        saldo = entrada - saida
 
-    conn.close()
+        conn.close()
+
+    except Exception as e:
+        print("ERRO NO HOME:", e)
+        total_produtos = 0
+        valor_estoque = 0
+        saldo = 0
+
+    return render_template(
+        "home.html",
+        total_produtos=total_produtos,
+        valor_estoque=valor_estoque,
+        saldo=saldo
+    )
 
     return render_template(
         "home.html",
