@@ -2,9 +2,7 @@
 
 {% block conteudo %}
 
-<h1>Financeiro</h1>
-
-<h2>Saldo: R$ {{ "%.2f"|format(saldo).replace(".", ",") }}</h2>
+<h2>Financeiro</h2>
 
 <form method="POST">
     <select name="tipo">
@@ -12,28 +10,22 @@
         <option value="saida">Saída</option>
     </select>
 
-    <input type="text" name="descricao" placeholder="Descrição" required>
-    <input type="number" step="0.01" name="valor" placeholder="Valor" required>
-
-    <button type="submit">Adicionar</button>
+    <input name="descricao" placeholder="Descrição">
+    <input name="valor" type="number" step="0.01" placeholder="Valor">
+    <button>Salvar</button>
 </form>
 
-<br>
+<p>Saldo: R$ {{ saldo }}</p>
 
-<table>
-<tr>
-    <th>ID</th>
-    <th>Tipo</th>
-    <th>Descrição</th>
-    <th>Valor</th>
-</tr>
+<table border="1">
+<tr><th>ID</th><th>Tipo</th><th>Desc</th><th>Valor</th></tr>
 
-{% for item in dados %}
+{% for i in dados %}
 <tr>
-    <td>{{ item[0] }}</td>
-    <td>{{ item[1] }}</td>
-    <td>{{ item[2] }}</td>
-    <td>R$ {{ "%.2f"|format(item[3]) }}</td>
+<td>{{ i[0] }}</td>
+<td>{{ i[1] }}</td>
+<td>{{ i[2] }}</td>
+<td>{{ i[3] }}</td>
 </tr>
 {% endfor %}
 
