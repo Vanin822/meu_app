@@ -15,17 +15,22 @@
     <button>Salvar</button>
 </form>
 
-<p>Saldo: R$ {{ saldo }}</p>
+<h3>Saldo: R$ {{ saldo }}</h3>
 
-<table border="1">
-<tr><th>ID</th><th>Tipo</th><th>Desc</th><th>Valor</th></tr>
+<table>
+<tr>
+    <th>ID</th>
+    <th>Tipo</th>
+    <th>Descrição</th>
+    <th>Valor</th>
+</tr>
 
 {% for i in dados %}
 <tr>
-<td>{{ i[0] }}</td>
-<td>{{ i[1] }}</td>
-<td>{{ i[2] }}</td>
-<td>{{ i[3] }}</td>
+    <td>{{ i[0] }}</td>
+    <td>{{ i[1] }}</td>
+    <td>{{ i[2] }}</td>
+    <td>R$ {{ i[3] }}</td>
 </tr>
 {% endfor %}
 

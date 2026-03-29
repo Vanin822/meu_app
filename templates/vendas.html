@@ -11,19 +11,24 @@
         {% endfor %}
     </select>
 
-    <input name="quantidade" type="number" placeholder="Qtd">
+    <input name="quantidade" type="number" placeholder="Quantidade">
     <button>Vender</button>
 </form>
 
-<table border="1">
-<tr><th>ID</th><th>Produto</th><th>Qtd</th><th>Valor</th></tr>
+<table>
+<tr>
+    <th>ID</th>
+    <th>Produto</th>
+    <th>Qtd</th>
+    <th>Valor</th>
+</tr>
 
 {% for v in vendas %}
 <tr>
-<td>{{ v[0] }}</td>
-<td>{{ v[1] }}</td>
-<td>{{ v[2] }}</td>
-<td>{{ v[3] }}</td>
+    <td>{{ v[0] }}</td>
+    <td>{{ v[1] }}</td>
+    <td>{{ v[2] }}</td>
+    <td>R$ {{ v[3] }}</td>
 </tr>
 {% endfor %}
 

@@ -4,8 +4,19 @@
 
 <h2>Dashboard</h2>
 
-<p>Total Produtos: {{ total_produtos }}</p>
-<p>Estoque: R$ {{ valor_estoque }}</p>
-<p>Saldo: R$ {{ saldo }}</p>
+<div class="card">
+    <h3>Total Produtos</h3>
+    <p>{{ total_produtos }}</p>
+</div>
+
+<div class="card">
+    <h3>Valor Estoque</h3>
+    <p>R$ {{ valor_estoque }}</p>
+</div>
+
+<div class="card">
+    <h3>Saldo</h3>
+    <p>R$ {{ saldo }}</p>
+</div>
 
 {% endblock %}

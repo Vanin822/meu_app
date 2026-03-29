@@ -7,19 +7,24 @@
 <form method="POST">
     <input name="nome" placeholder="Nome">
     <input name="preco" type="number" step="0.01" placeholder="Preço">
-    <input name="quantidade" type="number" placeholder="Qtd">
-    <button>Salvar</button>
+    <input name="quantidade" type="number" placeholder="Quantidade">
+    <button>Adicionar</button>
 </form>
 
-<table border="1">
-<tr><th>ID</th><th>Nome</th><th>Preço</th><th>Qtd</th></tr>
+<table>
+<tr>
+    <th>ID</th>
+    <th>Nome</th>
+    <th>Preço</th>
+    <th>Qtd</th>
+</tr>
 
 {% for p in produtos %}
 <tr>
-<td>{{ p[0] }}</td>
-<td>{{ p[1] }}</td>
-<td>{{ p[2] }}</td>
-<td>{{ p[3] }}</td>
+    <td>{{ p[0] }}</td>
+    <td>{{ p[1] }}</td>
+    <td>R$ {{ p[2] }}</td>
+    <td>{{ p[3] }}</td>
 </tr>
 {% endfor %}
 
