@@ -1,37 +1,15 @@
-@app.route("/home")
-def home():
-    if "usuario" not in session:
-        return redirect("/")
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
 
-    try:
-        conn = conectar()
-        cursor = conn.cursor()
+<h1>Dashboard funcionando</h1>
 
-        cursor.execute("SELECT COUNT(*) FROM produtos")
-        total_produtos = cursor.fetchone()[0] or 0
+<p>Total: {{ total_produtos }}</p>
+<p>Estoque: {{ valor_estoque }}</p>
+<p>Saldo: {{ saldo }}</p>
 
-        cursor.execute("SELECT SUM(preco * quantidade) FROM produtos")
-        valor_estoque = cursor.fetchone()[0] or 0
-
-        cursor.execute("SELECT SUM(valor) FROM financeiro WHERE tipo='entrada'")
-        entrada = cursor.fetchone()[0] or 0
-
-        cursor.execute("SELECT SUM(valor) FROM financeiro WHERE tipo='saida'")
-        saida = cursor.fetchone()[0] or 0
-
-        saldo = entrada - saida
-
-        conn.close()
-
-    except Exception as e:
-        print("ERRO NO HOME:", e)
-        total_produtos = 0
-        valor_estoque = 0
-        saldo = 0
-
-    return render_template(
-        "home.html",
-        total_produtos=total_produtos,
-        valor_estoque=valor_estoque,
-        saldo=saldo
-    )
+</body>
+</html>
