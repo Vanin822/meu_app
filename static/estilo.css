@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: #ffffff;
+}
+
+/* NAVBAR */
+nav {
+    background: #020617;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    margin: 0;
+    color: #38bdf8;
+}
+
+nav a {
+    color: #cbd5f5;
+    margin-left: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+/* CONTAINER */
+.container {
+    padding: 20px;
+}
+
+/* CARDS */
+.card {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 10px;
+    min-width: 200px;
+    text-align: center;
+}
+
+/* FORM */
+input, select {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+/* BOTÃO */
+button {
+    background: #38bdf8;
+    border: none;
+    padding: 10px 15px;
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0ea5e9;
+}
+
+/* TABELA */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #334155;
+}
+
+th {
+    color: #38bdf8;
+}
